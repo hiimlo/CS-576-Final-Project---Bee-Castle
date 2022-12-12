@@ -16,7 +16,16 @@ public class ClickScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            dialogueSystem.startDialogue();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.name == gameObject.name)
+                {
+                    dialogueSystem.startDialogue();
+                }
+            }
+
         }
     }
 }
