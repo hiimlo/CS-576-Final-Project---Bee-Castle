@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
     private bool paused;
+    public TMP_Text str;
     // Start is called before the first frame update
     void Start()
     {
         paused = false;
+        str.text = "";
     }
 
     // Update is called once per frame
@@ -24,10 +27,16 @@ public class PauseMenu : MonoBehaviour
         
         if (paused)
         {
+            Debug.Log("pause");
             Time.timeScale = 0;
+
+            str.text = "Paused";
         } else
         {
+            Debug.Log("unpause");
             Time.timeScale = 1;
+
+            str.text = "";
         }
     }
 }
