@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class RunAway : MonoBehaviour
 {
-    private GameObject 
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+         if (player == null)
+        {
+            Debug.LogError("Internal error: could not find the Player object - did you remove its 'Player' tag?");
+            return;
+        }
         
     }
 
