@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RunAway : MonoBehaviour
 {
+    private GameObject 
     // Start is called before the first frame update
     void Start()
     {
