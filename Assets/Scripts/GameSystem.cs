@@ -9,6 +9,7 @@ public class GameSystem : MonoBehaviour
 {
     public PauseMenu pauseMenu;
     public Text time_text;
+    public Image end;
 
     public Text inventory_text;
     public Text petals;
@@ -33,6 +34,7 @@ public class GameSystem : MonoBehaviour
         PlayerPrefs.SetInt("foundSepals", 0);
 
         items_left = 5;
+        end.enabled = false;
     }
 
     // Update is called once per frame
@@ -90,6 +92,8 @@ public class GameSystem : MonoBehaviour
         if (time_remaining < 0) {
             // do something, like switch to lose screen
             time_remaining = 0;
+            pauseMenu.paused = true;
+            end.enabled = true;
         }
 
         int minutes = (int) Mathf.Floor(time_remaining / 60);
