@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.029152077, g: 0.064445406, b: 0.12695017, a: 1}
+  m_IndirectSpecularColor: {r: 0.029152213, g: 0.064445764, b: 0.12695098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6686,6 +6686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bugsource: {fileID: 1693239338}
   bugCrawl: {fileID: 8300000, guid: 75987d0f68a85f843b4b99cce16f6474, type: 3}
+  bugDie: {fileID: 8300000, guid: 3781349119b4a6748b7e8a5afea7195a, type: 3}
   attacksfx: {fileID: 0}
 --- !u!82 &1693239338
 AudioSource:
