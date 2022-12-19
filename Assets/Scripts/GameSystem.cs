@@ -20,6 +20,7 @@ public class GameSystem : MonoBehaviour
     public AudioSource source;
     public AudioClip flowerPartObtained;
     public GameOver gameover;
+    public YouWon youwon;
 
     private int items_left;
     private int time_remaining;
@@ -80,7 +81,8 @@ public class GameSystem : MonoBehaviour
         }
 
         if (items_left == 0) {
-            // do something, like switch to win screen
+            pauseMenu.paused = true;
+            youwon.ShowScreen();
         }
         
 
@@ -91,10 +93,8 @@ public class GameSystem : MonoBehaviour
         }
 
         if (time_remaining < 0) {
-            // do something, like switch to lose screen
             time_remaining = 0;
             pauseMenu.paused = true;
-            end.enabled = true;
             gameover.ShowScreen();
         }
 
