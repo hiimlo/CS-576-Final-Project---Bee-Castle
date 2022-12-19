@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private bool idle;
     public AudioSource bugsource;
     public AudioClip bugCrawl;
+    public GameSystem game;
 
     public AudioClip attacksfx;
     // Start is called before the first frame update
@@ -45,6 +46,19 @@ public class Enemy : MonoBehaviour
         {
             
             Destroy(gameObject, .5f);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+
+        if (collision.gameObject.name == "Capsule")
+        {
+            bugsource.clip = attacksfx;
+            bugsource.loop = false;
+            bugsource.Play();
+            GameSystem.penalty += 30;
         }
     }
 }

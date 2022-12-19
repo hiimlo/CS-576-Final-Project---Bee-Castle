@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.029152213, g: 0.064445764, b: 0.12695098, a: 1}
+  m_IndirectSpecularColor: {r: 0.029152077, g: 0.064445406, b: 0.12695017, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -355,7 +355,6 @@ RectTransform:
   - {fileID: 1815433188}
   - {fileID: 1955655610}
   - {fileID: 621711699}
-  - {fileID: 595087931}
   - {fileID: 1229134982}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2678,82 +2677,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 585786048}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &595087928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 595087931}
-  - component: {fileID: 595087930}
-  - component: {fileID: 595087929}
-  m_Layer: 5
-  m_Name: Diagram
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &595087929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 595087928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6c5c5831eff2abf4f9c4d08f72631a58, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &595087930
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 595087928}
-  m_CullTransparentMesh: 1
---- !u!224 &595087931
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 595087928}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 64343421}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1214, y: 900}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &613707727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5455,7 +5378,7 @@ RectTransform:
   - {fileID: 1444147213}
   - {fileID: 260787564}
   m_Father: {fileID: 64343421}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7348,7 +7271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693072778}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.6972408, y: -0.222, z: 1.1999998}
+  m_LocalPosition: {x: -2.6972408, y: 0.56, z: 1.1999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7369,7 +7292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bugsource: {fileID: 1693239338}
   bugCrawl: {fileID: 8300000, guid: 75987d0f68a85f843b4b99cce16f6474, type: 3}
-  attacksfx: {fileID: 0}
+  game: {fileID: 2029638621}
+  attacksfx: {fileID: 8300000, guid: 5fb317dcd6a269644838a795e306d244, type: 3}
 --- !u!82 &1693239338
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8697,7 +8621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 463980785}
   time_text: {fileID: 411827398}
-  end: {fileID: 595087929}
+  end: {fileID: 2103275944}
   inventory_text: {fileID: 1249295076}
   petals: {fileID: 360102540}
   pistil: {fileID: 475515969}
@@ -8707,6 +8631,7 @@ MonoBehaviour:
   source: {fileID: 2029638622}
   flowerPartObtained: {fileID: 8300000, guid: 4e969c814a281ed4380ef7f5dbce466f, type: 3}
   gameover: {fileID: 1229134985}
+  penalty: 0
 --- !u!82 &2029638622
 AudioSource:
   m_ObjectHideFlags: 0

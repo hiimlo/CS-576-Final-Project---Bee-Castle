@@ -23,6 +23,7 @@ public class GameSystem : MonoBehaviour
 
     private int items_left;
     private int time_remaining;
+    public static int penalty;
 
     internal bool foundPetals = false;
     internal bool foundPistil = false;
@@ -35,6 +36,7 @@ public class GameSystem : MonoBehaviour
     {
         time_text.text = "05:00";
         time_remaining = 300;
+        penalty = 0;
 
         PlayerPrefs.SetInt("foundOvules", 0);
         PlayerPrefs.SetInt("foundSepals", 0);
@@ -87,7 +89,7 @@ public class GameSystem : MonoBehaviour
         // TIMER LOGIC
         if (!pauseMenu.paused)
         {
-            time_remaining = 300 - ((int)Time.timeSinceLevelLoad);
+            time_remaining = 300 - penalty - ((int)Time.timeSinceLevelLoad);
         }
 
         if (time_remaining < 0) {
