@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.029152213, g: 0.064445764, b: 0.12695098, a: 1}
+  m_IndirectSpecularColor: {r: 0.029152077, g: 0.064445406, b: 0.12695017, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5455,6 +5455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a0f60a801f97e4f9e531c1220ab0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
   str: {fileID: 1955655611}
 --- !u!4 &1884145843 stripped
 Transform:
@@ -5909,6 +5910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12f3df4adfc7a540a0c1270cf21a122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1883873760}
   time_text: {fileID: 411827398}
   inventory_text: {fileID: 1249295076}
   petals: {fileID: 360102540}

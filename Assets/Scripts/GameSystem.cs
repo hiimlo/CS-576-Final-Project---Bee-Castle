@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameSystem : MonoBehaviour
 {
-
+    public PauseMenu pauseMenu;
     public Text time_text;
 
     public Text inventory_text;
@@ -18,11 +18,13 @@ public class GameSystem : MonoBehaviour
     public Text sepals;
 
     private int items_left;
+    private int time_remaining;
 
     // Start is called before the first frame update
     void Start()
     {
         time_text.text = "05:00";
+        time_remaining = 300;
 
         PlayerPrefs.SetInt("foundPetals", 0);
         PlayerPrefs.SetInt("foundPistil", 0);
@@ -80,7 +82,10 @@ public class GameSystem : MonoBehaviour
         
 
         // TIMER LOGIC
-        int time_remaining = 300 - ((int) Time.timeSinceLevelLoad);
+        if (!pauseMenu.paused)
+        {
+            time_remaining = 300 - ((int)Time.timeSinceLevelLoad);
+        }
 
         if (time_remaining < 0) {
             // do something, like switch to lose screen

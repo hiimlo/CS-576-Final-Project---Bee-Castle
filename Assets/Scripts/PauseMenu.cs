@@ -6,7 +6,7 @@ using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
-    private bool paused;
+    public bool paused;
     public TMP_Text str;
     // Start is called before the first frame update
     void Start()
