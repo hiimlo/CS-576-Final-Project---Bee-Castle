@@ -22,9 +22,30 @@ public class Enemy : MonoBehaviour
         bugsource.Play();
     }
 
+    bool IsHazard()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
+        {
+            if (hit.transform.tag == "hazard")
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-
+        if (IsHazard())
+        {
+            hp--;
+        }
+        if (hp < 1)
+        {
+            Destroy(gameObject, .5f);
+        }
     }
 }
