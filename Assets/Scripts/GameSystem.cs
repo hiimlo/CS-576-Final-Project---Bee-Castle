@@ -21,15 +21,18 @@ public class GameSystem : MonoBehaviour
     private int items_left;
     private int time_remaining;
 
+    internal bool foundPetals = false;
+    internal bool foundPistil = false;
+    internal bool foundStamen = false;
+    internal bool foundOvules = false;
+    internal bool foundSepals = false;
+
     // Start is called before the first frame update
     void Start()
     {
         time_text.text = "05:00";
         time_remaining = 300;
 
-        PlayerPrefs.SetInt("foundPetals", 0);
-        PlayerPrefs.SetInt("foundPistil", 0);
-        PlayerPrefs.SetInt("foundStamen", 0);
         PlayerPrefs.SetInt("foundOvules", 0);
         PlayerPrefs.SetInt("foundSepals", 0);
 
@@ -43,39 +46,34 @@ public class GameSystem : MonoBehaviour
         // INVENTORY LOGIC
         inventory_text.text = items_left + " Parts Left to Find:";
 
-        if (PlayerPrefs.GetInt("foundPetals") == 0) {
-            petals.text = "???";
-        } else {
+        if (foundPetals) {
             items_left -= 1;
             petals.text = "Petals";
+            foundPetals = false;
         }
 
-        if (PlayerPrefs.GetInt("foundPistil") == 0) {
-            pistil.text = "???";
-        } else {
+        if (foundPistil) {
             items_left -= 1;
             pistil.text = "Pistil";
+            foundPistil = false;
         }
 
-        if (PlayerPrefs.GetInt("foundStamen") == 0) {
-            stamen.text = "???";
-        } else {
+        if (foundStamen) {
             items_left -= 1;
             stamen.text = "Stamen";
+            foundStamen = false;
         }
 
-        if (PlayerPrefs.GetInt("foundOvules") == 0) {
-            ovules.text = "???";
-        } else {
+        if (foundOvules) {
             items_left -= 1;
             ovules.text = "Ovules";
+            foundOvules = false;
         }
 
-        if (PlayerPrefs.GetInt("foundSepals") == 0) {
-            sepals.text = "???";
-        } else {
+        if (foundSepals) {
             items_left -= 1;
             sepals.text = "Sepals";
+            foundSepals = false;
         }
 
         if (items_left == 0) {

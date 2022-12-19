@@ -21,19 +21,16 @@ public class PauseMenu : MonoBehaviour
         //if (Keyboard.current[KeyCode.Escape].wasPressedThisFrame())
         if (Input.GetKey(KeyCode.Escape))
         {
-            Debug.Log("pause");
             paused = !paused;
         }
         
         if (paused)
         {
-            Debug.Log("pause");
             Time.timeScale = 0;
 
             str.text = "Paused";
         } else
         {
-            Debug.Log("unpause");
             Time.timeScale = 1;
 
             str.text = "";
