@@ -209,6 +209,38 @@ namespace UnityMovementAI
                             wallNormal = downHit.normal;
                         }
                     }
+                    else if(IsHazard(downHit.normal))
+                    {
+                        float randValue = Random.value;
+                        if (randValue < .25f) 
+                        {
+                            Vector3 newPos = rb3D.position + (Vector3.down * downHit.distance);
+                            FoundGround(downHit.normal, newPos);
+                        }
+                        else
+                        {
+                            /* Get vector pointing down the wall */
+                            Vector3 rightSlope = Vector3.Cross(downHit.normal, Vector3.down);
+                            Vector3 downSlope = Vector3.Cross(rightSlope, downHit.normal).normalized;
+
+                            float remainingDist = groundFollowDistance - downHit.distance;
+
+                            RaycastHit downWallHit;
+
+                            /* If we found ground that we would have hit if not for the wall then follow it */
+                            if (remainingDist > 0 && SphereCast(downSlope, out downWallHit, remainingDist, groundCheckMask.value) && !IsWall(downWallHit.normal))
+                            {
+                                Vector3 newPos = rb3D.position + (downSlope * downWallHit.distance);
+                                FoundGround(downWallHit.normal, newPos);
+                            }
+
+                            /* If we are close enough to the hit to be touching it then we are on the wall */
+                            if (downHit.distance <= 0.01f)
+                            {
+                                wallNormal = downHit.normal;
+                            }
+                        }
+                    }
                     /* Else we've found walkable ground */
                     else
                     {
@@ -278,6 +310,20 @@ namespace UnityMovementAI
         {
             /* If the normal of the surface is greater then our slope limit then its a wall */
             return Vector3.Angle(Vector3.up, surfNormal) > slopeLimit;
+        }
+
+        bool IsHazard(Vector3 surfNormal)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
+            {
+                if (hit.transform.tag == "hazard")
+                {
+                    return true;
+                }
+            }
+            return false;
+                
         }
 
         void LimitMovementOnSteepSlopes()
