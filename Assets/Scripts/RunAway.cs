@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class RunAway : MonoBehaviour
 {
-    private GameObject player;
+    public GameObject player;
+    float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-         if (player == null)
-        {
-            Debug.LogError("Internal error: could not find the Player object - did you remove its 'Player' tag?");
-            return;
-        }
-        
+        speed = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Vector3 normDir = (player.position - npc.position).normalized;
+        Vector3 normDir = (player.transform.position - transform.position).normalized;
+        float dist = (player.transform.position - transform.position).magnitude;
 
-        // normDir = Quaternion.AngleAxis(Random.Range(0, 89), Vector3.up) * normDir;
-
-        // Vector3 move = transform.position - (normDir * 10f);
-        // player.SetDestination(move);
-        // player.isStopped = false;
-        
+        if (dist < 50) { //num is to see if player is inside of chasing range
+            speed = 0.5f;
+            transform.LookAt(new Vector3(player.transform.position.x, 0, player.transform.position.z));
+            transform.position -= normDir * speed * Time.deltaTime;
+        }
+        else if (dist < 20) {
+            speed = 2.0f;
+            transform.LookAt(new Vector3(player.transform.position.x, 0, player.transform.position.z));
+            transform.position -= normDir * speed * Time.deltaTime;
+        }      
     }
 }
