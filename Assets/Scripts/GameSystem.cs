@@ -17,6 +17,8 @@ public class GameSystem : MonoBehaviour
     public Text stamen;
     public Text ovules;
     public Text sepals;
+    public AudioSource source;
+    public AudioClip flowerPartObtained;
 
     private int items_left;
     private int time_remaining;

@@ -37,9 +37,8 @@ public class FlowerPart : MonoBehaviour
             else if (gameObject.name == "sepals") {
                 gs.foundSepals = true;
             }
-
-            //gs.source.PlayOneShot(gs.flowersound, 0.5f); temp code, add in once sounds are added
             Destroy(gameObject);
+            gs.source.PlayOneShot(gs.flowerPartObtained, 0.5f);
         }
     }
 }
