@@ -19,6 +19,7 @@ public class GameSystem : MonoBehaviour
     public Text sepals;
     public AudioSource source;
     public AudioClip flowerPartObtained;
+    public GameOver gameover;
 
     private int items_left;
     private int time_remaining;
@@ -94,6 +95,7 @@ public class GameSystem : MonoBehaviour
             time_remaining = 0;
             pauseMenu.paused = true;
             end.enabled = true;
+            gameover.ShowScreen();
         }
 
         int minutes = (int) Mathf.Floor(time_remaining / 60);
