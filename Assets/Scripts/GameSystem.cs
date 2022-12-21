@@ -20,7 +20,7 @@ public class GameSystem : MonoBehaviour
     public AudioSource source;
     public AudioClip flowerPartObtained;
     public GameOver gameover;
-    public YouWon youwon;
+    public GameOver youwon;
 
     private int items_left;
     private int time_remaining;
